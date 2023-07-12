@@ -34,9 +34,10 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2em 5em;
+    padding: 1em 5em;
     font-size: 1rem;
     font-weight: 400;
+    background-color: var(--Light-Grayish-Blue);
 }
 
 .header-logo{
@@ -58,6 +59,24 @@ header{
 .nav-menu a{
     text-decoration: none;
     color: var(--Grayish-Blue);
+    position: relative;
+    padding-bottom: 1.5em;
+}
+
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+
+.nav-menu a:hover::after {
+background-color: var(--Lime-Green);
 }
 
 /* navbar - buttton */
@@ -69,10 +88,14 @@ header{
 .invite-link{
     text-decoration: none;
     display: inline-block;
-    padding: .7em 1.7em;
+    padding: .5em 1.5em;
     border-radius: 2.5rem;
     background: var(--Lime-Green);
     color: var(--White);
+}
+
+.invite-link:hover{
+    opacity: 0.8;
 }
 
 
@@ -80,8 +103,6 @@ header{
 
 .easybank-intro{
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .intro-left{
@@ -107,10 +128,228 @@ header{
     font-weight: 400;
 }
 
+/* section - 2 */
+
+/* section - 2 - heading */
+.testimonial{
+    display: flex;
+    flex-direction: column;
+    padding: 5em;
+    background-color: var(--Light-Grayish-Blue);
+}
+
+.testimonial-heading{
+    margin: 2.5em .5em;
+    width: 55%;
+}
+
+.testimonial-heading h2{
+    font-size: 2.8rem;
+    font-weight: 300;
+    margin-bottom: .5em;
+    color: var(--Dark-blue);
+}
+
+.testimonial-heading p{
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    margin: 2em 0;
+    color: var(--Grayish-Blue);
+    font-weight: 400;
+}
+
+
+/* section - 2 - body */
+
+.testimonial-points{
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+
+}
+
+.points{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: auto;
+    width: 22%;
+}
+
+.points img{
+    max-width: 4rem;
+    max-height: 4rem;
+}
+
+.points h3{
+    font-size: 1.4rem;
+    color: var(--Dark-blue);
+    font-weight: 400;
+    margin: 2rem 0;
+}
+
+.points p{
+    font-size: 1rem;
+    color: var(--Grayish-Blue);
+    font-weight: 400;
+    padding-right: 2em;
+    line-height: 1.5rem;
+}
+
+
+/* section - 3 */
+
+.latest-article{
+    display: flex;
+    flex-direction: column;
+    padding: 3em 5em; 
+}
+
+/* article - heading */
+.latest-article h2{
+    font-size: 2.8rem;
+    font-weight: 300;
+    margin-bottom: .5em;
+    color: var(--Dark-blue);
+    margin: 1.5em 0;
+}
+
+/* articles */
+
+.articles{
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+}
+
+.more-articles{
+    height: auto;
+    width: 22%;
+    border-radius: .3rem;
+    background-color: var(--Very-Light-Gray);
+
+}
+
+
+
+.more-articles img{
+    border-top-left-radius: .3rem;
+    border-top-right-radius: .3rem;
+    height: 50%;
+    width: 100%;
+}
+
+.article-info{
+    display: flex;
+    flex-direction: column;
+    padding: .8em 1.5em 0;
+    gap: .5em;
+
+    
+}
+
+.article-writer{
+    font-size: .6rem;
+    margin-top: 1.5em;
+    color: var(--Grayish-Blue);
+    font-weight: 400;
+}
+
+.article-info a{
+    font-size: 1.1rem;
+    color: var(--Dark-blue);
+    font-weight:400;
+    text-decoration: none;
+}
+
+.article-info a:hover{
+    color: var(--Lime-Green);
+}
+
+.article-short{
+    font-size: .9rem;
+    color: var(--Grayish-Blue);
+    line-height: 1.2rem;
+}
+
+
+/* footer */
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 3em 5em;
+    background-color: var(--Dark-blue);
+    color: var(--White);
+}
+
+/* social - logo */
+
+.socials{
+    display: grid;
+}
+
+.socials>img{
+    
+}
+
+.social-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.social-links img{
+    height: 100%;
+    width: 100%;
+}
+
+
+/* easybank - links */
+
+.easybank-links ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1rem;
+    column-gap: 6rem;
+    list-style: none;
+}
+
+.easybank-links a{
+    text-decoration: none;
+    color: var(--White);
+    font-size: .9rem;
+}
+
+.easybank-links a:hover{
+    color: var(--Lime-Green);
+
+}
+
+
+/* home - link */
+
+.home-link{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.home-link p{
+    font-size: .9rem;
+    color: var(--Grayish-Blue);
+}
 
 
 
 
+
+
+.attribution{
+    display: none;
+    
+}
 
 
 
