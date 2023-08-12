@@ -3,6 +3,7 @@
     --Dark-blue: hsl(233, 26%, 24%);
     --Lime-Green: hsl(136, 65%, 51%);
     --Bright-Cyan: hsl(192, 70%, 51%);
+    --Bg-btn: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
    
 
     --Grayish-Blue: hsl(233, 8%, 62%);
@@ -35,108 +36,122 @@ a:hover {
   text-decoration: none;
 }
 
-
-/* header */
-.hamburger-menu{
-    display: none;
+h1,
+h2,
+h3 {
+  margin-top: 0;
 }
 
-header{
+/* nav-bar */
+.nav-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em 5em;
-    font-size: 1rem;
-    font-weight: 400;
-    background-color: var(--Light-Grayish-Blue);
+    padding: 1.0625rem 1.5rem;
 }
-
-.header-logo{
-    max-width: 100%;
-    height: 100%;
+  
+.logo img {
+    width: 8.6875rem;
+    height: 1.25rem;
 }
-
-/* navbar */
-.nav-menu{
-    width: 25%;
+  
+.hamburger-menu span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--Dark-blue);
+    transition: all 0.3s ease-in-out;
+    transform-origin: 2px 1px;
 }
-
-.nav-menu ul{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
+  
+.hamburger-menu span:not(:last-child) {
+    margin-bottom: 5px;
 }
-
-.nav-menu a{
-    text-decoration: none;
+  
+  /* for cross icon */
+  
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+  
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+  
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+  
+  /* here adding for background for navmenu for mobile view */
+.navmenu-background {
+    display: none;
+    position: fixed;
+    top: 3.75rem;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-image: linear-gradient(var(--Dark-blue), transparent);
+}
+  
+.nav-link a {
+    font-size: 0.875rem;
     color: var(--Grayish-Blue);
+    transition: 0.2s ease-in-out;
     position: relative;
-    padding-bottom: 1.5em;
 }
-
-.nav-menu a::after {
+  
+.nav-link a::before {
     content: "";
-    position: absolute;
+    display: block;
     left: 0;
-    bottom: 0;
-    width: 100%;
+    right: 0;
     height: 3px;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
+    bottom: -30px;
+    position: absolute;
+    transition: background 0.3s ease-in-out;
 }
-
-
-.nav-menu a:hover::after {
-background-color: var(--Lime-Green);
+  
+.nav-link a:hover::before {
+    background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
 }
-
-/* navbar - buttton */
-.hamburger{
-    height: auto;
-    width: auto;
-}
-
-.invite-link{
-    text-decoration: none;
-    display: inline-block;
-    padding: .5em 1.5em;
-    border-radius: 2.5rem;
-    background: var(--Lime-Green);
-    color: var(--White);
-}
-
-.invite-link:hover{
-    opacity: 0.8;
-}
-
-
-/* section - 1 */
-
-.easybank-intro{
-    display: flex;
-}
-
-.intro-left{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 6em;
-}
-
-.intro-left h1{
-    font-size: 3.5rem;
-    font-weight: 300;
-    margin-bottom: .5em;
+  
+.nav-link a:hover,
+.nav-link-a:focus {
     color: var(--Dark-blue);
 }
-
-.intro-left p{
-    font-size: 1.1rem;
-    line-height: 1.3rem;
-    margin-bottom: 2em;
-    color: var(--Grayish-Blue);
+  
+.nav-link a:not(:last-child) {
+    margin-right: 1.963125rem;
+}
+  
+/* button */
+.btn {
+    padding: 0.8125rem 2.1875rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 0.875rem;
+    background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+    color: var(--White);
     font-weight: 400;
+}
+  
+.body-btn {
+    display: inline-block;
+    padding: 0.8125rem 2.1875rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 0.875rem;
+    background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+    color: var(--White);
+    font-weight: 400;
+    max-width: 50%;
+}
+  
+.btn:hover,
+.btn:focus,
+.body-btn:hover,
+.body-btn:focus {
+    opacity: 0.85;
 }
 
 /* section - 2 */
@@ -169,6 +184,48 @@ background-color: var(--Lime-Green);
     font-weight: 400;
 }
 
+/* section - intro */
+
+.intro-image {
+    position: relative;
+    background-image: url("./images/bg-intro-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 17.5rem;
+}
+  
+.intro-image::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("./images/image-mockups.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+  
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+  
+.intro > h1 {
+    font-weight: 300;
+    color: var(--Dark-blue);
+    font-size: 2.31rem;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+}
+  
+.intro p {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
 
 /* section - 2 - body */
 
@@ -300,10 +357,6 @@ footer{
     display: grid;
 }
 
-.socials>img{
-    
-}
-
 .social-links{
     display: flex;
     justify-content: space-between;
@@ -352,16 +405,40 @@ footer{
     color: var(--Grayish-Blue);
 }
 
-
-
-
-
-
 .attribution{
     display: none;
     
 }
 
+
+/* media query for nav */
+@media (max-width: 768px) {
+    .btn,
+    .nav-link {
+      display: none;
+    }
+}
+  
+@media (min-width: 769px) {
+    .hamburger-menu {
+      display: none;
+    }
+  
+    .easybank-intro {
+      display: flex;
+    }
+  
+    .intro-image {
+      background-image: url("./images/bg-intro-desktop.svg");
+      width: 50%;
+      order: 2;
+      height: 41rem;
+      background-position: left center;
+    }
+    .intro {
+      width: 50%;
+    }
+}
 
 
 
