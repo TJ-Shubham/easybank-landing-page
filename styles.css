@@ -424,6 +424,14 @@ footer{
 /* media query */
   
 @media (min-width: 769px) {
+    .nav-link{
+        display: flex;
+    }
+
+    .btn{
+        display: block;
+    }
+
     .hamburger-menu {
       display: none;
     }
@@ -431,16 +439,10 @@ footer{
     .easybank-intro {
       display: flex;
     }
-  
-    .intro-image {
-      background-image: url("./images/bg-intro-desktop.svg");
-      width: 50%;
-      order: 2;
-      height: 41rem;
-      background-position: left center;
-    }
-    .intro {
-      width: 50%;
+
+    .intro-image{
+        flex: 1;
+        order: 2;
     }
 
     .attribution{
