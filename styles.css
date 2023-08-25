@@ -220,6 +220,7 @@ h3 {
     font-size: 2.2rem;
     font-weight: 300;
     color: var(--Dark-blue);
+    margin-bottom: 0;
 }
 
 .testimonial-heading>p{
@@ -250,7 +251,7 @@ h3 {
     font-size: 1.4rem;
     color: var(--Dark-blue);
     font-weight: 400;
-    margin: 1em auto;
+    margin: 1em 0;
 }
 
 .points p{
@@ -296,8 +297,8 @@ h3 {
 .more-articles img{
     border-top-left-radius: .3rem;
     border-top-right-radius: .3rem;
-    height: 100%;
-    width: 100%;
+    height: 220px;
+    width: 332px;
 }
 
 .article-info{
@@ -424,6 +425,8 @@ footer{
 /* media query */
   
 @media (min-width: 769px) {
+
+
     .nav-link{
         display: flex;
     }
@@ -445,9 +448,71 @@ footer{
         order: 2;
     }
 
+    .intro{
+        width: 50%;
+    }
+
     .attribution{
         display: none;
     }
+
+    .testimonial-heading{
+        text-align: left;
+    }
+
+    .testimonial-heading>p{
+        width: 40%;
+    }
+
+    .testimonial-points{
+        flex-direction: row;
+        text-align: left;
+        margin-top: 1em;
+    }
+
+    .points{
+        align-items: flex-start;
+        margin-right: 1rem;
+    }
+
+    .latest-article{
+        align-items: flex-start;
+    }
+
+    .articles{
+        flex-direction: row;
+        gap: 2.5em;
+    }
+
+    footer{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2em;
+    }
+
+    .left-footer{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 10rem;
+    }
+
+    .socials{
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .easybank-links{
+        margin: 0;
+    }
+
+    .easybank-links ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        column-gap: 5rem;
+    }
+
 }
 
 
