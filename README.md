@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [URL](https://github.com/TJ-Shubham/easybank-landing-page)
-- Live Site URL: [URL](https://your-live-site-url.com)
+- Live Site URL: [URL](https://tj-shubham.github.io/easybank-landing-page/)
 
 ## My process
 
