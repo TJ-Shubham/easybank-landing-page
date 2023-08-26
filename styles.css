@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
 :root{
     
     --Dark-blue: hsl(233, 26%, 24%);
@@ -28,6 +30,7 @@ body {
   font-size: 1.125rem;
   color: var(--Grayish-Blue);
   font-weight: 300;
+  overflow-x: hidden;
 }
 
 a,
@@ -54,45 +57,55 @@ h3 {
     width: 8.6875rem;
     height: 1.25rem;
 }
-  
+
+.hamburger-menu {
+    display: block;
+    height: 35px;
+    width: 35px;
+    /* border: 2.3px solid var(--Dark-Violet); */
+    position: relative;
+}
+
 .hamburger-menu span {
     display: block;
-    width: 24px;
-    height: 2px;
+    width: 75%;
+    height: 2.5px;
+    margin-bottom: 5px;
     background-color: var(--Dark-blue);
     transition: all 0.3s ease-in-out;
     transform-origin: 2px 1px;
+    position: absolute;
 }
-  
-.hamburger-menu span:not(:last-child) {
-    margin-bottom: 5px;
+
+.hamburger-menu span:nth-child(1) {
+    top: 20%;
+    left: 15%;
 }
-  
-/* for cross icon */
-  
+
+.hamburger-menu span:nth-child(2) {
+    top: 45%;
+    left: 15%;
+}
+
+.hamburger-menu span:nth-child(3) {
+    top: 70%;
+    left: 15%;
+}
+
 .hamburger-menu.active span:nth-child(1) {
     transform: rotate(45deg);
+    width: 80%;
 }
-  
+
 .hamburger-menu.active span:nth-child(2) {
     opacity: 0;
 }
-  
+
 .hamburger-menu.active span:nth-child(3) {
     transform: rotate(-45deg);
+    width: 80%;
 }
-  
-  /* here adding for background for navmenu for mobile view */
-.navmenu-background {
-    display: none;
-    position: fixed;
-    top: 3.75rem;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background-image: linear-gradient(var(--Dark-blue), transparent);
-}
-  
+
 .nav-link{
     display: none;
 }
@@ -127,7 +140,22 @@ h3 {
 .nav-link a:not(:last-child) {
     margin-right: 1.963125rem;
 }
-  
+
+.nav-links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2em 0;
+    margin: 1em;
+    background-color: var(--White);
+    display: none;
+}
+
+.nav-links a{
+    color: var(--Dark-blue);
+}
+
 /* button */
 .btn {
     display: none;
@@ -171,13 +199,13 @@ h3 {
     min-height: 17.5rem;
 }
   
-.intro-image::before {
+.intro-image::after {
     content: "";
     position: absolute;
     height: 100%;
     width: 100%;
     background-image: url("./images/image-mockups.png");
-    background-size: cover;
+    background-size: 93%;
     background-repeat: no-repeat;
     background-position: center bottom;
 }
@@ -297,8 +325,8 @@ h3 {
 .more-articles img{
     border-top-left-radius: .3rem;
     border-top-right-radius: .3rem;
-    height: 220px;
-    width: 332px;
+    height: 100%;
+    width: 100%;
 }
 
 .article-info{
@@ -426,6 +454,18 @@ footer{
   
 @media (min-width: 769px) {
 
+    .nav-links{
+        display: none;
+    }
+
+    header, .testimonial, .latest-article, footer{
+        padding-left: 9.3em;
+        padding-right: 9.3em;
+    }
+
+    .easybank-intro{
+        padding-left: 9.3em;
+    }
 
     .nav-link{
         display: flex;
@@ -441,15 +481,41 @@ footer{
   
     .easybank-intro {
       display: flex;
+      align-items: center;
     }
 
     .intro-image{
-        flex: 1;
+        flex: 3;
         order: 2;
+        height: 41rem;
+        background-image: none;
+    }
+
+    .intro-image::after{
+        left: 20%;
+        height: 122%;
+    }
+
+    .intro-image::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: url("./images/bg-intro-desktop.svg");
+        background-size: 122%;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-position: 0% 83%;
     }
 
     .intro{
-        width: 50%;
+        flex: 2;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .intro h1, p{
+        width: 65%;
     }
 
     .attribution{
@@ -461,18 +527,25 @@ footer{
     }
 
     .testimonial-heading>p{
-        width: 40%;
+        width: 50%;
     }
 
     .testimonial-points{
         flex-direction: row;
         text-align: left;
         margin-top: 1em;
+        padding: 0;
+        gap: 3.5rem;
     }
 
     .points{
         align-items: flex-start;
-        margin-right: 1rem;
+        margin: 0;
+        height: 100%;
+    }
+
+    .points p{
+        width: 100%;
     }
 
     .latest-article{
@@ -481,13 +554,16 @@ footer{
 
     .articles{
         flex-direction: row;
-        gap: 2.5em;
+        gap: 3.5rem;
+    }
+
+    .article-short{
+        width: 100%;
     }
 
     footer{
         flex-direction: row;
         justify-content: space-between;
-        padding: 2em;
     }
 
     .left-footer{
@@ -511,6 +587,10 @@ footer{
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
         column-gap: 5rem;
+    }
+
+    .right-footer>p{
+        width: 100%;
     }
 
 }
